@@ -1,0 +1,42 @@
+main {
+  display: flex;
+
+  .sidebar {
+    width: 86px;
+    height: 100vh;
+  }
+
+  .icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .content {
+    .header {
+      display: flex;
+      justify-content: space-between;
+
+      form {
+        height: 80px;
+        width: 1170px;
+        display: flex;
+        border: 1px solid #000000;
+        border-radius: 10px;
+        padding: 0 20px;
+
+        ul {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 20px;
+          list-style: none;
+        }
+
+        .settings {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
+}
