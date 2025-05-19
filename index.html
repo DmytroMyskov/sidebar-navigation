@@ -7,7 +7,8 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 
@@ -16,7 +17,7 @@
   <title>Document</title>
 </head>
 
-<body>
+<body class="dark">
   <main>
     <aside class="sidebar">
       <button id="sidebar-toggle">
@@ -47,14 +48,15 @@
 
           <ul>
             <li>
-              <button><svg class="icon">
+              <button class="notification-icon" data-count="25">
+                <svg class="icon">
                   <use href="sprite.svg#email"></use>
                 </svg>
                 <span>Email</span>
               </button>
             </li>
             <li>
-              <button>
+              <button class="notification-icon" data-count="10">
                 <svg class="icon">
                   <use href="sprite.svg#chats"></use>
                 </svg>
@@ -62,7 +64,7 @@
               </button>
             </li>
             <li>
-              <button>
+              <button class="notification-icon" data-count="5">
                 <svg class="icon">
                   <use href="sprite.svg#calendar"></use>
                 </svg>
@@ -192,6 +194,11 @@
           </ul>
         </div>
       </div>
+
+      <div class="toggle-container" id="theme-toggle">
+        <input type="checkbox" id="toggle-switch" class="toggle-input">
+        <label for="toggle-switch" class="toggle-btn"></label>
+      </div>
     </aside>
 
     <div class="content">
@@ -297,7 +304,7 @@
         </form>
       </section>
 
-      <!-- <img src="bg.png" alt=""> -->
+      <img src="bg.png" alt="">
     </div>
   </main>
 </body>

@@ -2,6 +2,13 @@
   --primary-font: 'Montserrat', sans-serif;
   --primary-color: #4F4F4F;
   --secondary-color: #9E8CFC;
+  --third-color: #fff;
+
+  /* .dark {
+    --primary-color: #BDBDBD;
+    --secondary-color: #9E8CFC;
+    --third-color: #161D31;
+  } */
 }
 
 body {
@@ -25,7 +32,7 @@ main {
     flex-direction: column;
     align-items: center;
     position: relative;
-    transition: 0.5s;
+    transition: width 0.5s;
     box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.15);
 
 
@@ -147,18 +154,17 @@ main {
         background-color: var(--secondary-color);
 
         span {
-          color: #fff;
+          color: var(--third-color);
         }
 
         svg {
-          fill: #fff;
+          fill: var(--third-color);
         }
       }
     }
 
     .dashboard:hover {
       box-shadow: 0 0 20px 0 rgba(158, 140, 252, 0.7);
-
     }
 
     .menu {
@@ -166,13 +172,12 @@ main {
       flex-direction: column;
       gap: 30px;
       width: 100%;
-      margin-block: 30px;
+      margin-block: 30px 15px;
 
       .separator {
         padding: 0 0 5px 15px;
         display: grid;
         align-items: center;
-        flex-shrink: 0;
 
         svg {
           width: 40px;
@@ -183,6 +188,7 @@ main {
         }
 
         span {
+          height: 20px;
           text-transform: uppercase;
           transition: 0.5s;
           grid-area: 1 / 1;
@@ -209,10 +215,72 @@ main {
             transition: 0.5s;
           }
         }
+
+        .notification-icon {
+          position: relative;
+        }
+
+        .notification-icon::after {
+          content: attr(data-count);
+          position: absolute;
+          top: 2px;
+          right: 24px;
+          background-color: #6FCF97;
+          color: #4F4F4F;
+          font-weight: 700;
+          border-radius: 50%;
+          padding: 2px;
+          font-size: 12px;
+          min-width: 15px;
+          text-align: center;
+        }
+
+        .notification-icon[data-count="0"]::after {
+          display: none;
+        }
       }
     }
-  }
 
+    .toggle-container {
+      padding: 10px;
+      text-align: center;
+    }
+
+    .toggle-input {
+      display: none;
+    }
+
+    .toggle-btn {
+      display: inline-block;
+      width: 38px;
+      height: 23px;
+      background-color: var(--secondary-color);
+      border-radius: 34px;
+      position: relative;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .toggle-btn::after {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background-color: var(--third-color);
+      border-radius: 50%;
+      top: 4px;
+      left: 4px;
+      transition: transform 0.3s ease;
+    }
+
+    .toggle-input:checked+.toggle-btn {
+      background-color: #392C72;
+    }
+
+    .toggle-input:checked+.toggle-btn::after {
+      transform: translateX(15px);
+    }
+  }
 
   .content {
     margin-top: 30px;
@@ -237,7 +305,7 @@ main {
         border: 1px solid var(--primary-color);
         border-radius: 10px;
         padding: 0 20px;
-        background-color: #fff;
+        background-color: var(--third-color);
 
         ul {
           display: flex;
