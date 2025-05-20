@@ -10,14 +10,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
-
   <script src="script.js" defer></script>
+
+  <link rel="stylesheet" href="style.css">
 
   <title>Document</title>
 </head>
 
-<body class="dark">
+<body>
   <main>
     <aside class="sidebar">
       <button id="sidebar-toggle">
@@ -48,26 +48,32 @@
 
           <ul>
             <li>
-              <button class="notification-icon email" data-count="25">
-                <svg class="icon">
-                  <use href="sprite.svg#email"></use>
-                </svg>
+              <button>
+                <div class="notification-icon email" data-count="25">
+                  <svg class="icon">
+                    <use href="sprite.svg#email"></use>
+                  </svg>
+                </div>
                 <span>Email</span>
               </button>
             </li>
             <li>
-              <button class="notification-icon chats" data-count="10">
-                <svg class="icon">
-                  <use href="sprite.svg#chats"></use>
-                </svg>
+              <button>
+                <div class="notification-icon chats" data-count="10">
+                  <svg class="icon">
+                    <use href="sprite.svg#chats"></use>
+                  </svg>
+                </div>
                 <span>Chats</span>
               </button>
             </li>
             <li>
-              <button class="notification-icon calendar" data-count="5">
-                <svg class="icon">
-                  <use href="sprite.svg#calendar"></use>
-                </svg>
+              <button>
+                <div class="notification-icon calendar" data-count="5">
+                  <svg class="icon">
+                    <use href="sprite.svg#calendar"></use>
+                  </svg>
+                </div>
                 <span>Calendar</span>
               </button>
             </li>

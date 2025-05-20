@@ -9,6 +9,7 @@ function toggleSidebar() {
   sidebar.classList.toggle('open');
 }
 
-function toggleTheme() {
+function toggleTheme(e) {
+  if (!e.pointerType) return;
   document.body.classList.toggle('dark');
 }
